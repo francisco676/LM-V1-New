@@ -1,719 +1,445 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5 Agents That Replaced My Full-Time Hire — Free Playbook</title>
-  <meta name="description" content="The exact 5 Cowork agents that handle meetings, content, lead magnets, files, and investor updates — all for $20/month." />
-  <style>
-    :root {
-      --bg:      #09090b;
-      --surface: #18181b;
-      --border:  #3f3f46;
-      --text:    #fafafa;
-      --text2:   #a1a1aa;
-      --accent:  #5B6FFF;
-      --lime:    #D8EC6A;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 Claude Cowork Agents That Replaced My Ops Team — RallyUp</title>
+<meta name="description" content="The exact 5 AI agents Alec uses to run his entire ops team. Free playbook by RallyUp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#09090b;--surface:#18181b;--surface2:#27272a;--border:#3f3f46;
+  --text:#fafafa;--text2:#a1a1aa;--text3:#71717a;
+  --accent:#5B6FFF;--accent2:#6B85FF;--accent-bg:rgba(91,111,255,.08);
+  --lime:#D8EC6A;
+  --green:#4ade80;--red:#f87171;--yellow:#facc15;--blue:#60a5fa;
+  --orange:#fb923c;
+  --radius:12px;--radius-lg:20px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent2)}
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ===== GATE ===== */
+#gate{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--bg);
+  display:flex;align-items:center;justify-content:center;
+  padding:1.5rem;
+  transition:opacity .5s ease;
+}
+#gate.unlocking{opacity:0;pointer-events:none}
+.gate-inner{max-width:460px;width:100%;text-align:center}
+.gate-logo{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:.75rem}
+.logo-pill{background:var(--lime);color:#09090b;font-weight:800;font-size:.85rem;padding:.3rem .85rem;border-radius:99px;letter-spacing:-.01em}
+.gate-divider{width:36px;height:2px;background:linear-gradient(90deg,var(--accent),var(--lime));border-radius:2px;margin:0 auto 1.75rem}.gate-eyebrow{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:.9rem;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.gate-eyebrow::before,.gate-eyebrow::after{content:'';flex:1;max-width:24px;height:1.5px;background:var(--accent);border-radius:2px}
+.gate-inner h1{font-size:clamp(1.75rem,5vw,2.35rem);font-weight:900;line-height:1.1;letter-spacing:-.03em;margin-bottom:.75rem}
+.gate-inner h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.gate-sub{font-size:.95rem;color:var(--text2);max-width:370px;margin:0 auto 1.5rem;line-height:1.6}
+.gate-bullets{list-style:none;text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem 1.4rem;margin-bottom:1.75rem;display:flex;flex-direction:column;gap:.55rem}
+.gate-bullets li{font-size:.875rem;color:var(--text2);display:flex;align-items:flex-start;gap:.6rem;line-height:1.5}
+.gate-bullets li::before{content:'✓';color:var(--lime);font-weight:700;flex-shrink:0;margin-top:.05em}
+.gate-form{display:flex;flex-direction:column;gap:.65rem}
+.gate-input{width:100%;padding:.95rem 1.2rem;font-size:1rem;font-family:'Inter',sans-serif;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);color:var(--text);outline:none;transition:border-color .2s,box-shadow .2s}
+.gate-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(91,111,255,.15)}
+.gate-input::placeholder{color:var(--text3)}.gate-btn{width:100%;padding:1rem;font-size:1rem;font-weight:700;font-family:'Inter',sans-serif;background:var(--accent);color:#fff;border:none;border-radius:var(--radius);cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:.5rem;letter-spacing:-.01em}
+.gate-btn:hover:not(:disabled){background:var(--accent2);transform:translateY(-1px);box-shadow:0 8px 28px rgba(91,111,255,.35)}
+.gate-btn:disabled{opacity:.65;cursor:not-allowed;transform:none}
+.gate-spinner{width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .65s linear infinite;display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.gate-error{font-size:.8rem;color:var(--red);display:none;text-align:center;margin-top:.1rem}
+.gate-privacy{font-size:.72rem;color:var(--text3);margin-top:.25rem}
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
-    }
+/* ===== CONTENT ===== */
+#content{display:none}
 
-    /* ── GATE ─────────────────────────────────────────────── */
-    #gate {
-      position: fixed; inset: 0; z-index: 1000;
-      background: var(--bg);
-      display: flex; align-items: center; justify-content: center;
-      padding: 24px;
-      transition: opacity 0.5s ease;
-    }
-    #gate.unlocking { opacity: 0; pointer-events: none; }
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 1.5rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(91,111,255,.12),transparent 70%);pointer-events:none}
+.hero-inner{max-width:720px;position:relative;z-index:1}
+.badge{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1rem;border-radius:99px;border:1px solid var(--border);background:var(--surface);font-size:.8rem;color:var(--text2);margin-bottom:2rem;letter-spacing:.02em}
+.badge span{color:var(--green);font-weight:600}
+.hero h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:900;line-height:1.1;letter-spacing:-.03em;margin-bottom:1.25rem}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.hero p{font-size:1.15rem;color:var(--text2);max-width:540px;margin:0 auto 2.5rem}
+.hero-meta{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;color:var(--text3);font-size:.85rem;margin-bottom:3rem}
+.hero-meta div{display:flex;align-items:center;gap:.4rem}
+.scroll-hint{color:var(--text3);font-size:.8rem;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 
-    .gate-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 40px 36px;
-      max-width: 480px;
-      width: 100%;
-      text-align: center;
-    }
+/* LAYOUT */
+.container{max-width:760px;margin:0 auto;padding:0 1.5rem}
+section{padding:5rem 0}
+.section-label{display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:1rem}
+.section-label::before{content:'';width:12px;height:2px;background:var(--accent);border-radius:2px}
+h2{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;letter-spacing:-.02em;line-height:1.2;margin-bottom:1rem}
+h3{font-size:1.2rem;font-weight:700;margin-bottom:.5rem}
 
-    .gate-badge {
-      display: inline-block;
-      background: rgba(91,111,255,0.15);
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 4px 12px;
-      border-radius: 100px;
-      margin-bottom: 20px;
-    }
+/* AGENT CARDS */
+.agent-cards{display:flex;flex-direction:column;gap:2rem;margin-top:2.5rem}
+.agent-card{border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;background:var(--surface);transition:border-color .2s}
+.agent-card:hover{border-color:var(--accent)}
+.agent-num{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--accent);font-weight:500;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+.agent-num::after{content:'';flex:1;height:1px;background:var(--border)}
+.agent-card h3{font-size:1.3rem;margin-bottom:.35rem}
+.agent-role{font-size:.8rem;color:var(--text3);margin-bottom:1rem;font-weight:500;text-transform:uppercase;letter-spacing:.06em}
+.agent-card p{color:var(--text2);font-size:.92rem;margin-bottom:1.25rem;line-height:1.65}.prompt-block{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1.1rem 1.4rem;font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--text3);line-height:1.9;white-space:pre-wrap}
+.prompt-block .ph{color:var(--accent);font-weight:500}
+.prompt-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);margin-bottom:.5rem}
+.result-row{display:flex;align-items:center;gap:.75rem;font-size:.85rem;color:var(--text2);padding:.4rem 0}
+.result-row .arrow{color:var(--green);font-weight:700;font-size:1rem;flex-shrink:0}
+.result-row strong{color:var(--text)}
 
-    .gate-card h2 {
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 12px;
-    }
+/* STAT CALLOUT */
+.stat-callout{display:flex;align-items:center;gap:1.2rem;padding:1.2rem 1.5rem;border-radius:var(--radius);border:1px solid var(--border);background:var(--accent-bg);margin:2rem 0}
+.stat-callout .num{font-size:2rem;font-weight:900;color:var(--accent);line-height:1}
+.stat-callout p{color:var(--text2);font-size:.9rem;line-height:1.5}
+.stat-callout strong{color:var(--text)}
 
-    .gate-card h2 span { color: var(--lime); }
+/* INLINE CTA */
+.inline-cta{border:1px solid rgba(91,111,255,.25);border-radius:var(--radius);padding:2rem;background:linear-gradient(135deg,rgba(91,111,255,.06),rgba(91,111,255,.02));text-align:center;margin:3rem 0}
+.inline-cta p{color:var(--text2);font-size:.95rem;margin-bottom:1rem;max-width:480px;margin-left:auto;margin-right:auto}
+.inline-cta p strong{color:var(--text)}
 
-    .gate-card p {
-      color: var(--text2);
-      font-size: 15px;
-      margin-bottom: 28px;
-    }
+/* CTA */
+.cta-section{text-align:center;padding:5rem 1.5rem;position:relative}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 50% 100%,rgba(91,111,255,.1),transparent 70%);pointer-events:none}
+.cta-box{max-width:600px;margin:0 auto;position:relative;z-index:1}
+.cta-box h2{font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:1rem}.cta-box p{color:var(--text2);font-size:1.05rem;margin-bottom:2rem;max-width:480px;margin-left:auto;margin-right:auto}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2rem;border-radius:var(--radius);font-size:1rem;font-weight:700;border:none;cursor:pointer;transition:all .2s}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent2);color:#fff;transform:translateY(-1px);box-shadow:0 8px 30px rgba(91,111,255,.3)}
+.btn-ghost{background:transparent;color:var(--text2);border:1px solid var(--border);font-size:.85rem;padding:.6rem 1.2rem;margin-top:1rem}
+.btn-ghost:hover{border-color:var(--text3);color:var(--text)}
 
-    .gate-bullets {
-      list-style: none;
-      text-align: left;
-      margin-bottom: 28px;
-    }
-    .gate-bullets li {
-      display: flex;
-      gap: 10px;
-      font-size: 14px;
-      color: var(--text2);
-      margin-bottom: 10px;
-    }
-    .gate-bullets li::before {
-      content: '✓';
-      color: var(--lime);
-      font-weight: 700;
-      flex-shrink: 0;
-    }
+/* FLOATING CTA */
+.floating-cta{position:fixed;bottom:1.5rem;right:1.5rem;z-index:100;opacity:0;transform:translateY(20px);transition:all .3s;pointer-events:none}
+.floating-cta.visible{opacity:1;transform:translateY(0);pointer-events:all}
+.floating-cta .btn{box-shadow:0 4px 20px rgba(0,0,0,.5);font-size:.9rem;padding:.75rem 1.5rem}
 
-    .gate-form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
+/* DIVIDER */
+.divider{height:1px;background:var(--border);margin:0}
 
-    .gate-form input[type="email"] {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 12px 16px;
-      color: var(--text);
-      font-size: 15px;
-      width: 100%;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .gate-form input[type="email"]:focus { border-color: var(--accent); }
-    .gate-form input[type="email"]::placeholder { color: var(--text2); }
+/* FOOTER */
+footer{text-align:center;padding:3rem 1.5rem;color:var(--text3);font-size:.8rem}
+footer a{color:var(--text2)}
 
-    .gate-form button {
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 13px 24px;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-    .gate-form button:hover { opacity: 0.88; }
-    .gate-form button:disabled { opacity: 0.5; cursor: not-allowed; }
+/* CHECKLIST */
+.checklist{list-style:none;display:flex;flex-direction:column;gap:.65rem;margin-top:1.5rem}
+.checklist li{display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;color:var(--text2);line-height:1.5}
+.checklist li::before{content:'→';color:var(--accent);font-weight:700;flex-shrink:0;margin-top:.05em}
+.checklist li strong{color:var(--text)}
 
-    #gate-error {
-      color: #f87171;
-      font-size: 13px;
-      margin-top: 6px;
-      display: none;
-    }
-
-    .gate-fine-print {
-      margin-top: 14px;
-      font-size: 12px;
-      color: var(--text2);
-    }
-
-    /* ── CONTENT ──────────────────────────────────────────── */
-    #content { display: none; }
-
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 18px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-weight: 800;
-      font-size: 18px;
-      letter-spacing: -0.03em;
-    }
-    .logo span { color: var(--lime); }
-
-    .header-cta {
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-      padding: 9px 18px;
-      font-size: 14px;
-      font-weight: 600;
-      transition: opacity 0.2s;
-    }
-    .header-cta:hover { opacity: 0.88; }
-
-    main { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
-
-    .eyebrow {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-
-    h1 {
-      font-size: clamp(30px, 5vw, 46px);
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
-    }
-    h1 .highlight { color: var(--lime); }
-
-    .subhead {
-      font-size: 18px;
-      color: var(--text2);
-      max-width: 600px;
-      margin-bottom: 40px;
-      line-height: 1.6;
-    }
-
-    .stats {
-      display: flex;
-      gap: 32px;
-      flex-wrap: wrap;
-      margin-bottom: 56px;
-      padding: 24px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-    }
-    .stat { display: flex; flex-direction: column; gap: 4px; }
-    .stat-num { font-size: 28px; font-weight: 800; color: var(--lime); }
-    .stat-label { font-size: 13px; color: var(--text2); }
-
-    /* Sections */
-    .section { margin-bottom: 52px; }
-
-    .section h2 {
-      font-size: 22px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-    }
-    .section > p, .section > .intro {
-      color: var(--text2);
-      font-size: 15px;
-      margin-bottom: 24px;
-      line-height: 1.7;
-    }
-
-    /* Agent cards */
-    .agents { display: flex; flex-direction: column; gap: 16px; }
-
-    .agent-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-    }
-
-    .agent-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      margin-bottom: 12px;
-    }
-
-    .agent-icon {
-      width: 44px; height: 44px;
-      background: rgba(91,111,255,0.12);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 22px;
-      flex-shrink: 0;
-    }
-
-    .agent-title { font-size: 17px; font-weight: 700; margin-bottom: 2px; }
-    .agent-subtitle { font-size: 13px; color: var(--text2); }
-
-    .agent-details { padding-left: 60px; }
-    .agent-details p { font-size: 14px; color: var(--text2); margin-bottom: 12px; line-height: 1.6; }
-
-    .agent-result {
-      display: flex;
-      gap: 8px;
-      align-items: flex-start;
-      font-size: 14px;
-    }
-    .agent-result::before {
-      content: '→';
-      color: var(--accent);
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-
-    /* Setup steps */
-    .steps { display: flex; flex-direction: column; gap: 12px; }
-
-    .step {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 18px 20px;
-    }
-
-    .step-num {
-      width: 30px; height: 30px;
-      background: var(--accent);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 13px;
-      font-weight: 700;
-      flex-shrink: 0;
-      color: #fff;
-    }
-
-    .step-body h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
-    .step-body p { font-size: 14px; color: var(--text2); line-height: 1.6; }
-
-    /* Prompt block */
-    .prompt-block {
-      background: #0d0d10;
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
-      border-radius: 8px;
-      padding: 16px 18px;
-      font-family: 'SF Mono', 'Fira Code', monospace;
-      font-size: 13px;
-      color: #c4c4cc;
-      line-height: 1.7;
-      margin-top: 12px;
-      white-space: pre-wrap;
-    }
-
-    /* ROI calculator */
-    .roi-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-    @media (max-width: 520px) { .roi-grid { grid-template-columns: 1fr; } }
-
-    .roi-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 18px 20px;
-    }
-    .roi-card .label { font-size: 12px; color: var(--text2); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
-    .roi-card .val { font-size: 22px; font-weight: 800; }
-    .roi-card .val.red { color: #f87171; }
-    .roi-card .val.green { color: var(--lime); }
-
-    /* CTA section */
-    .cta-section {
-      background: linear-gradient(135deg, rgba(91,111,255,0.15), rgba(216,236,106,0.08));
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 44px 36px;
-      text-align: center;
-    }
-    .cta-section h2 { font-size: 26px; font-weight: 800; margin-bottom: 12px; }
-    .cta-section p { color: var(--text2); font-size: 16px; margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
-
-    .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      border-radius: 10px;
-      padding: 14px 28px;
-      font-size: 16px;
-      font-weight: 700;
-      transition: opacity 0.2s, transform 0.15s;
-    }
-    .cta-btn:hover { opacity: 0.88; transform: translateY(-1px); }
-
-    /* Floating CTA */
-    #float-cta {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      border-radius: 100px;
-      padding: 12px 22px;
-      font-size: 14px;
-      font-weight: 600;
-      box-shadow: 0 8px 32px rgba(91,111,255,0.35);
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity 0.3s, transform 0.3s;
-      z-index: 50;
-    }
-    #float-cta.visible { opacity: 1; transform: translateY(0); }
-    #float-cta:hover { opacity: 0.9; }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 24px;
-      text-align: center;
-      font-size: 13px;
-      color: var(--text2);
-    }
-    footer a { color: var(--text2); text-decoration: none; }
-    footer a:hover { color: var(--text); }
-  </style>
+/* RESPONSIVE */
+@media(max-width:600px){
+  .hero-meta{gap:1rem}
+  .agent-card{padding:1.5rem}
+  .gate-inner h1{font-size:1.6rem}
+}
+</style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════════════════════
-     GATE
-══════════════════════════════════════════════════════════ -->
+<!-- ===== GATE ===== -->
 <div id="gate">
-  <div class="gate-card">
-    <div class="gate-badge">Free Playbook</div>
-    <h2>Get <span>5 Agents</span> That Replace<br>Your Full-Time Hire</h2>
-    <p>Drop your email and unlock the exact playbook — includes agent setup, copy-paste prompts, and real numbers.</p>
+  <div class="gate-inner">
+    <div class="gate-logo"><span class="logo-pill">rallyup</span></div>    <div class="gate-divider"></div>
+    <div class="gate-eyebrow">Free Playbook</div>
+    <h1>5 Claude Cowork<br><em>Agents</em> That<br>Run My Ops</h1>
+    <p class="gate-sub">The exact 5 AI agents Alec uses to replace a full ops team — with copy-paste prompts for each one.</p>
     <ul class="gate-bullets">
-      <li>5 ready-to-deploy Cowork agent skills</li>
-      <li>Copy-paste prompts for each agent</li>
-      <li>$20/mo vs $50–80k/yr cost breakdown</li>
-      <li>Step-by-step 20-minute setup guide</li>
-      <li>Bonus: the exact LinkedIn post that drove 200k+ impressions</li>
+      <li>The Meeting Prep Agent that reads your calendar + emails automatically</li>
+      <li>The Content Engine that drafts 5 LinkedIn posts in under 3 minutes</li>
+      <li>The Lead Magnet Machine that builds gated resources on autopilot</li>
+      <li>The File Organizer that GTD-sorts your Downloads without asking</li>
+      <li>The Investor Update Writer that pulls data and drafts the full email</li>
     </ul>
-    <form class="gate-form" id="gate-form">
-      <input type="email" id="gate-email" placeholder="your@email.com" required />
-      <button type="submit" id="gate-btn">Unlock the Playbook →</button>
-      <span id="gate-error">Something went wrong — try again.</span>
+    <form class="gate-form" id="gateForm" novalidate>
+      <input type="email" class="gate-input" id="emailInput" placeholder="your@email.com" autocomplete="email" required>
+      <div class="gate-error" id="gateError">Please enter a valid email address.</div>
+      <button type="submit" class="gate-btn" id="gateBtn">
+        <span id="btnText">Get Instant Access →</span>
+        <div class="gate-spinner" id="gateSpinner"></div>
+      </button>
+      <p class="gate-privacy">No spam. Unsubscribe anytime. Instant access — no redirect.</p>
     </form>
-    <p class="gate-fine-print">No spam. Unsubscribe anytime. By entering your email you're joining Alec's newsletter.</p>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════════
-     MAIN CONTENT (hidden until gate unlocked)
-══════════════════════════════════════════════════════════ -->
+<!-- ===== CONTENT ===== -->
 <div id="content">
 
-  <header>
-    <div class="logo">Rally<span>Up</span></div>
-    <a href="https://calendar.app.google/SDA5TMRMbqbPQWEn7" target="_blank" class="header-cta">Book a Demo →</a>
-  </header>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="badge">🤖 Claude Cowork <span>2026 Playbook</span></div>
+    <h1>5 Agents That<br>Replaced My<br><em>Ops Team</em></h1>
+    <p>I run my entire ops workflow with 5 Claude Cowork agents. Here's exactly what each one does — with the prompts to copy.</p>
+    <div class="hero-meta">
+      <div>⚡ 5 agents</div>
+      <div>📋 Copy-paste prompts</div>
+      <div>🕐 10 min setup each</div>
+    </div>
+    <div class="scroll-hint">↓ Scroll to start</div>
+  </div>
+</section><section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="section-label">The Setup</div>
+    <h2>Why I stopped hiring for ops.</h2>
+    <p style="color:var(--text2);max-width:560px;margin-bottom:1.5rem">I spent 3 months trying to hire an ops coordinator. Then I spent 2 weeks building 5 Claude Cowork agents. The agents won — and now I have a system that runs without me babysitting it.</p>
 
-  <main>
-    <p class="eyebrow">The Cowork Agents Playbook</p>
-    <h1>5 Agents That <span class="highlight">Replaced</span><br>My Full-Time Hire</h1>
-    <p class="subhead">Claude Cowork gave non-technical founders their own AI team for $20/month. Here's the exact setup — copy it in 20 minutes.</p>
-
-    <div class="stats">
-      <div class="stat"><span class="stat-num">5</span><span class="stat-label">agents deployed</span></div>
-      <div class="stat"><span class="stat-num">14</span><span class="stat-label">days to results</span></div>
-      <div class="stat"><span class="stat-num">$20</span><span class="stat-label">per month total cost</span></div>
-      <div class="stat"><span class="stat-num">200k+</span><span class="stat-label">impressions in 7 days</span></div>
+    <div class="stat-callout">
+      <div class="num">5</div>
+      <p>agents now handle tasks that used to take <strong>4+ hours per week</strong> of my time — or require a dedicated hire.</p>
     </div>
 
-    <!-- ── SECTION 1: The 5 Agents ── -->
-    <div class="section">
-      <h2>The 5 Agents (and What They Handle)</h2>
-      <p class="intro">Each agent is a Cowork skill that runs inside the Claude desktop app. No code. No complex setup. Install the skill, describe your task, let it run.</p>
+    <p style="color:var(--text2);max-width:560px">Here's the exact stack. Each agent has a one-sentence job description, a trigger condition, and a copy-paste prompt to get you started.</p>
+  </div>
+</section>
 
-      <div class="agents">
+<section>
+  <div class="container">
+    <div class="section-label">The Agents</div>
+    <h2>The full ops stack.</h2>
 
-        <div class="agent-card">
-          <div class="agent-header">
-            <div class="agent-icon">📋</div>
-            <div>
-              <div class="agent-title">Agent 1 — Meeting Prep</div>
-              <div class="agent-subtitle">Replaces: $40–60k/yr EA or Chief of Staff</div>
-            </div>
-          </div>
-          <div class="agent-details">
-            <p>Before every sales call or investor meeting, this agent scans your Gmail, Slack, Notion, and calendar to build a 1-page brief: who they are, what you've discussed before, open action items, and suggested talking points.</p>
-            <div class="agent-result">Saves 45–60 minutes of research before every important call.</div>
-          </div>
+    <div class="agent-cards">
+
+      <div class="agent-card">
+        <div class="agent-num">Agent 01</div>
+        <h3>The Meeting Prep Agent</h3>
+        <div class="agent-role">Trigger: 2 hours before any calendar event</div>
+        <p>Before every meeting, this agent reads your calendar invite, pulls recent emails from that contact, checks your last Notion notes from meetings with them, and surfaces the 3 most important things to know. You walk in prepared every time — zero effort.</p>
+        <div class="prompt-label">Starter prompt</div>
+        <div class="prompt-block">I have a meeting with <span class="ph">[name]</span> at <span class="ph">[time]</span>.
+
+Pull their last 3 emails from my Gmail.
+Check my Notion for any previous meeting notes with them.
+Look up their LinkedIn and summarize what they do in 2 sentences.
+
+Then give me:1. The 3 most important things to know before this meeting
+2. 2 questions I should ask
+3. Any open action items from last time</div>
+        <div style="margin-top:1.25rem">
+          <div class="result-row"><span class="arrow">→</span><span><strong>Time saved:</strong> 20–30 min of pre-meeting research, every meeting</span></div>
+          <div class="result-row"><span class="arrow">→</span><span><strong>Works with:</strong> Gmail, Notion, Google Calendar (all via MCP connectors)</span></div>
         </div>
-
-        <div class="agent-card">
-          <div class="agent-header">
-            <div class="agent-icon">✍️</div>
-            <div>
-              <div class="agent-title">Agent 2 — LinkedIn Content Engine</div>
-              <div class="agent-subtitle">Replaces: $3–5k/mo content agency</div>
-            </div>
-          </div>
-          <div class="agent-details">
-            <p>Every week: finds 5 trending topics across your niches, writes 5 LinkedIn posts in your exact voice, creates 5 lead magnet files (PDF or Word docs), and uploads everything to a new Notion page — ready to schedule.</p>
-            <div class="agent-result">12+ LinkedIn post ideas generated in the first 14 days.</div>
-          </div>
-        </div>
-
-        <div class="agent-card">
-          <div class="agent-header">
-            <div class="agent-icon">🧲</div>
-            <div>
-              <div class="agent-title">Agent 3 — Lead Magnet Machine</div>
-              <div class="agent-subtitle">Replaces: $2–4k/mo freelance designer/copywriter</div>
-            </div>
-          </div>
-          <div class="agent-details">
-            <p>Turns any LinkedIn post into a gated landing page — dark-branded, Beehiiv-connected, Vercel-ready. Subscribers unlock the full playbook. Every subscriber goes straight into your newsletter list. Zero manual work.</p>
-            <div class="agent-result">Full HTML landing page generated and deployed in under 10 minutes.</div>
-          </div>
-        </div>
-
-        <div class="agent-card">
-          <div class="agent-header">
-            <div class="agent-icon">📁</div>
-            <div>
-              <div class="agent-title">Agent 4 — File & Machine Organizer</div>
-              <div class="agent-subtitle">Replaces: 2–3 hours of manual cleanup/week</div>
-            </div>
-          </div>
-          <div class="agent-details">
-            <p>Sorts your Downloads folder, Desktop, and Screenshots using GTD principles — automatically buckets everything into Action, Reference, Archive, or Trash. Weekly review takes 5 minutes instead of 45.</p>
-            <div class="agent-result">Desktop went from 140 files to 12 in the first run.</div>
-          </div>
-        </div>
-
-        <div class="agent-card">
-          <div class="agent-header">
-            <div class="agent-icon">📊</div>
-            <div>
-              <div class="agent-title">Agent 5 — Investor Update Writer</div>
-              <div class="agent-subtitle">Replaces: 3–4 hours of monthly writing</div>
-            </div>
-          </div>
-          <div class="agent-details">
-            <p>Pulls your metrics from Notion, Gmail threads, and Slack, then writes a complete monthly investor update in your voice — highlights, lowlights, key metrics table, ask section, and next-month focus. One prompt. Done.</p>
-            <div class="agent-result">Monthly update written and ready to send in under 8 minutes.</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- ── SECTION 2: Setup Guide ── -->
-    <div class="section">
-      <h2>How to Set This Up in 20 Minutes</h2>
-      <p class="intro">You don't need to know how to code. If you can install an app and type a sentence, you can deploy all 5 agents today.</p>
-
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <h3>Download Claude Desktop + Enable Cowork Mode</h3>
-            <p>Go to claude.ai, download the desktop app, and enable Cowork mode from the settings panel. This activates the agent/skill layer that all 5 agents run on.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <h3>Install the Plugin Pack</h3>
-            <p>In Cowork settings, install the RallyUp plugin pack. This drops all 5 agent skills into your sidebar in one click — Meeting Prep, Content Engine, Lead Magnet Machine, File Organizer, and Investor Update.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <h3>Connect Your Apps (5 min)</h3>
-            <p>Connect Gmail, Slack, Notion, and Google Calendar via the MCP connectors in Cowork settings. Each is a one-click OAuth — no API keys, no dev setup. This is what lets the agents pull real context from your actual work.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div class="step-body">
-            <h3>Run Your First Agent</h3>
-            <p>Type "prep me for my meeting with [name]" or "run my weekly content" in the Cowork chat. The agent activates, pulls live context, and delivers the output. That's it.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">5</div>
-          <div class="step-body">
-            <h3>Book a 30-Min Setup Call (Optional)</h3>
-            <p>If you want Alec to walk you through a live setup, book a free 30-minute call. He'll share his exact Cowork config and answer every question you have about deploying this for your business.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── SECTION 3: Starter Prompts ── -->
-    <div class="section">
-      <h2>Copy-Paste Starter Prompts</h2>
-      <p class="intro">Use these exactly as written to activate each agent. Customize the [brackets] with your own context.</p>
-
-      <div class="agent-card" style="margin-bottom:12px;">
-        <div class="agent-title" style="margin-bottom:8px;">🗓 Meeting Prep</div>
-        <div class="prompt-block">prep me for my meeting with [Name] at [Company] tomorrow at [Time]. pull everything — emails, slack, calendar, open action items.</div>
-      </div>
-
-      <div class="agent-card" style="margin-bottom:12px;">
-        <div class="agent-title" style="margin-bottom:8px;">✍️ Weekly Content</div>
-        <div class="prompt-block">run my weekly linkedin content. find 5 trending topics, write 5 posts, create the lead magnets, and upload everything to notion.</div>
-      </div>
-
-      <div class="agent-card" style="margin-bottom:12px;">
-        <div class="agent-title" style="margin-bottom:8px;">📁 File Organizer</div>
-        <div class="prompt-block">run my weekly review. scan my desktop and downloads folder, sort everything into gtd buckets, and show me what you moved.</div>
       </div>
 
       <div class="agent-card">
-        <div class="agent-title" style="margin-bottom:8px;">📊 Investor Update</div>
-        <div class="prompt-block">write my monthly investor update for [Month]. pull my key metrics from notion, check my gmail for any investor threads, and write the full update in my voice.</div>
-      </div>
-    </div>
+        <div class="agent-num">Agent 02</div>
+        <h3>The Content Engine</h3>
+        <div class="agent-role">Trigger: Weekly, Sunday morning</div>
+        <p>Searches for what's trending in your niche, drafts 5 LinkedIn posts in your voice, creates gated lead magnets for each one, and uploads everything to a Notion content calendar. The whole run takes under 3 minutes of wall-clock time. You show up Monday with a full week of content ready.</p>
+        <div class="prompt-label">Starter prompt</div>
+        <div class="prompt-block">Run my weekly LinkedIn content workflow.
 
-    <!-- ── SECTION 4: ROI Breakdown ── -->
-    <div class="section">
-      <h2>The Math That Made Me Cancel the Hire</h2>
-      <p class="intro">This isn't about AI hype. It's about what $20/month replaces versus what you'd actually pay a human to do the same things.</p>
+1. Search for 5 trending topics in: AI tools, employee advocacy, LinkedIn growth
+2. Draft 5 posts in my voice (casual, lowercase, hook-first)
+3. Create a lead magnet PDF or HTML for each post
+4. Upload everything to my Notion content calendar
 
-      <div class="roi-grid">
-        <div class="roi-card">
-          <div class="label">EA / Chief of Staff (part-time)</div>
-          <div class="val red">$40–60k/yr</div>
-        </div>
-        <div class="roi-card">
-          <div class="label">Content Agency (basic)</div>
-          <div class="val red">$36–60k/yr</div>
-        </div>
-        <div class="roi-card">
-          <div class="label">Freelance Copywriter</div>
-          <div class="val red">$24–48k/yr</div>
-        </div>
-        <div class="roi-card">
-          <div class="label">All 5 Agents Combined</div>
-          <div class="val green">$240/yr</div>
+Today is <span class="ph">[date]</span>. Schedule posts starting Monday.</div>
+        <div style="margin-top:1.25rem">
+          <div class="result-row"><span class="arrow">→</span><span><strong>Output:</strong> 5 posts + 5 lead magnets + Notion page, every week</span></div>
+          <div class="result-row"><span class="arrow">→</span><span><strong>Replaces:</strong> 4–6 hours of content creation per week</span></div>
         </div>
       </div>
-      <p style="color:var(--text2);font-size:14px;">The agents don't take PTO, don't need onboarding, and get better every time Claude releases a new model update.</p>
+
+      <div class="agent-card">        <div class="agent-num">Agent 03</div>
+        <h3>The Lead Magnet Machine</h3>
+        <div class="agent-role">Trigger: After drafting any LinkedIn post</div>
+        <p>Takes a LinkedIn post and builds a full gated HTML lead magnet around it — email gate, branded design, Beehiiv integration, RallyUp CTA, and all content. Deployed to Vercel as a static site. The whole thing, start to finish, in one command.</p>
+        <div class="prompt-label">Starter prompt</div>
+        <div class="prompt-block">Create a gated HTML lead magnet for this LinkedIn post:
+
+<span class="ph">[paste your post here]</span>
+
+Requirements:
+- Email gate using Beehiiv (pub ID: pub_78884462-...)
+- RallyUp brand colors (blue #5B6FFF, lime #D8EC6A)
+- 5–7 sections of real, actionable content
+- Book a Demo CTA: https://calendar.app.google/SDA5TMRMbqbPQWEn7
+- Save to /outputs/[topic-name]/index.html</div>
+        <div style="margin-top:1.25rem">
+          <div class="result-row"><span class="arrow">→</span><span><strong>Output:</strong> Deployable HTML file, ready for Vercel in under 2 min</span></div>
+          <div class="result-row"><span class="arrow">→</span><span><strong>Captures:</strong> Email subscribers + routes hot leads to book a demo</span></div>
+        </div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-num">Agent 04</div>
+        <h3>The File Organizer</h3>
+        <div class="agent-role">Trigger: Weekly, Friday EOD</div>
+        <p>Scans your Downloads and Desktop, GTD-sorts everything into Action / Reference / Archive / Trash buckets, and moves files to the right folders without asking. Screenshots get renamed and filed. Old files get flagged for deletion. Your machine stays clean automatically.</p>
+        <div class="prompt-label">Starter prompt</div>
+        <div class="prompt-block">Run my weekly file cleanup.
+
+Scan: ~/Downloads and ~/DesktopSort everything into GTD buckets:
+- Action: things I need to act on
+- Reference: things I'll want to find later
+- Archive: things to keep but not act on
+- Trash: things that can go
+
+Move files to the right folders.
+Rename screenshots with descriptive names.
+Flag anything older than 30 days I haven't opened.</div>
+        <div style="margin-top:1.25rem">
+          <div class="result-row"><span class="arrow">→</span><span><strong>Time saved:</strong> 20–40 min of manual file cleanup per week</span></div>
+          <div class="result-row"><span class="arrow">→</span><span><strong>Result:</strong> Clean machine, every Friday, zero effort</span></div>
+        </div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-num">Agent 05</div>
+        <h3>The Investor Update Writer</h3>
+        <div class="agent-role">Trigger: Monthly, first Monday</div>
+        <p>Pulls MRR and transaction data from Mercury, checks Notion for product updates and milestones, reads your last investor email for tone reference, and drafts the full monthly update. You spend 5 minutes editing instead of 90 minutes writing from scratch.</p>
+        <div class="prompt-label">Starter prompt</div>
+        <div class="prompt-block">Draft my monthly investor update for <span class="ph">[month]</span>.
+
+Pull from:
+- Mercury: MRR, transaction volume, burn rate
+- Notion: product milestones, team updates
+- Gmail: last investor update for tone reference
+
+Format:
+- Subject: [Company] Update — [Month] [Year]
+- 3-bullet executive summary
+- Metrics table (MRR, growth %, key stats)
+- 3 wins, 2 challenges, top ask
+- Keep it under 400 words</div>
+        <div style="margin-top:1.25rem">
+          <div class="result-row"><span class="arrow">→</span><span><strong>Time saved:</strong> 60–90 min of writing and data-gathering, every month</span></div>          <div class="result-row"><span class="arrow">→</span><span><strong>Works with:</strong> Mercury, Notion, Gmail (all via MCP connectors)</span></div>
+        </div>
+      </div>
+
     </div>
+  </div>
+</section>
 
-    <!-- ── CTA ── -->
-    <div class="cta-section">
-      <h2>Want Alec to Set This Up <span style="color:var(--lime);">With You?</span></h2>
-      <p>Book a free 30-minute call and he'll walk you through the full Cowork setup — live, on your machine, with your real data.</p>
-      <a href="https://calendar.app.google/SDA5TMRMbqbPQWEn7" target="_blank" class="cta-btn">
-        Book a Free Setup Call →
-      </a>
-    </div>
-  </main>
+<div class="divider"></div>
 
-  <footer>
-    <p>Built by <a href="https://rallyup.team" target="_blank">RallyUp</a> · <a href="https://rallyup.team" target="_blank">rallyup.team</a></p>
-  </footer>
+<div class="container">
+  <div class="inline-cta">
+    <p>Want your <strong>whole team</strong> running agents like this — and posting on LinkedIn every week with built-in tracking and competition?</p>
+    <a href="https://calendar.app.google/SDA5TMRMbqbPQWEn7" class="btn btn-primary" target="_blank">See How RallyUp Works →</a>
+  </div>
+</div>
 
-</div><!-- /content -->
+<section>
+  <div class="container">
+    <div class="section-label">Getting Started</div>
+    <h2>How to set up your first agent.</h2>
+    <p style="color:var(--text2);margin-bottom:1.5rem;max-width:560px">Each agent takes about 10 minutes to set up. Here's the sequence that works best:</p>
+    <ul class="checklist">
+      <li><strong>Install Claude Cowork</strong> — the desktop app, not just the API. Agents need file system access to be useful.</li>
+      <li><strong>Connect your tools</strong> — Gmail, Notion, Google Calendar, Mercury. Each takes ~2 min with OAuth. The connectors unlock 80% of what makes agents actually useful.</li>
+      <li><strong>Start with the Meeting Prep Agent</strong> — it's the easiest to set up and the one you'll feel immediately. One prep run pays for itself.</li>
+      <li><strong>Build a skill for your weekly content run</strong> — copy the Content Engine prompt above, save it as a scheduled skill, and run it every Sunday. The ROI here is massive.</li>
+      <li><strong>Add the File Organizer last</strong> — it needs file system access to your computer. Once you've tested agents that don't touch your files, you'll trust this one more.</li>
+    </ul>
+  </div>
+</section>
 
-<!-- Floating CTA -->
-<a href="https://calendar.app.google/SDA5TMRMbqbPQWEn7" target="_blank" id="float-cta">Book a Free Call →</a>
+<section class="cta-section">
+  <div class="cta-box">    <div class="badge" style="margin-bottom:1.5rem">🚀 15-minute demo</div>
+    <h2>Want to see how RallyUp<br>fits into this stack?</h2>
+    <p>RallyUp is what happens when your whole team runs agents like this — and you can track who's posting, what's performing, and reward the top contributors. Book a 15-min call with Alec to see it live.</p>
+    <a href="https://calendar.app.google/SDA5TMRMbqbPQWEn7" class="btn btn-primary" target="_blank">Book a Demo →</a>
+    <br>
+    <a href="https://rallyup.team" class="btn btn-ghost" target="_blank">Learn more about RallyUp</a>
+  </div>
+</section>
+
+<footer>
+  <p>Made by <a href="https://rallyup.team" target="_blank">RallyUp</a> — turn your employees into your best marketing channel.</p>
+  <p style="margin-top:.5rem">© 2026 RallyUp. All rights reserved.</p>
+</footer>
+
+<div class="floating-cta" id="floatingCta">
+  <a href="https://calendar.app.google/SDA5TMRMbqbPQWEn7" class="btn btn-primary" target="_blank">Book a Demo →</a>
+</div>
+
+</div><!-- /#content -->
 
 <script>
-  // ─── Config ────────────────────────────────────────────────
+(function() {
   const PUB_ID  = 'pub_78884462-f4cc-4d75-876d-beb3fe8cc986';
   const API_KEY = 'GOS985E55bHhaoeuXcBbpfHEm57aqpgN8PW7NKduHhCi2LNAIIFfLe2jsRkqZ4yp';
   const LS_KEY  = 'rallyup_lm_cowork';
 
-  // ─── Gate logic ────────────────────────────────────────────
   const gate    = document.getElementById('gate');
   const content = document.getElementById('content');
+  const form    = document.getElementById('gateForm');
+  const emailEl = document.getElementById('emailInput');
+  const btn     = document.getElementById('gateBtn');
+  const btnText = document.getElementById('btnText');
+  const spinner = document.getElementById('gateSpinner');
+  const errorEl = document.getElementById('gateError');
 
   function unlock() {
+    localStorage.setItem(LS_KEY, '1');
     gate.classList.add('unlocking');
     setTimeout(() => {
       gate.style.display = 'none';
       content.style.display = 'block';
-    }, 500);
-  }
+      initFloatingCta();
+    }, 500);  }
 
-  // Returning visitor — skip gate
   if (localStorage.getItem(LS_KEY)) {
     gate.style.display = 'none';
     content.style.display = 'block';
+    initFloatingCta();
+    return;
   }
-
-  // Gate form submit
-  const form  = document.getElementById('gate-form');
-  const btn   = document.getElementById('gate-btn');
-  const input = document.getElementById('gate-email');
-  const err   = document.getElementById('gate-error');
 
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
-    const email = input.value.trim();
-    if (!email) return;
-
-    btn.disabled = true;
-    btn.textContent = 'Unlocking…';
-    err.style.display = 'none';
-
-    try {
-      const res = await fetch(
-        `https://api.beehiiv.com/v2/publications/${PUB_ID}/subscriptions`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${API_KEY}`
-          },
-          body: JSON.stringify({
-            email,
-            reactivate_existing: false,
-            send_welcome_email: true
-          })
-        }
-      );
-
-      if (res.ok || res.status === 409) {
-        // 409 = already subscribed — unlock anyway
-        localStorage.setItem(LS_KEY, '1');
-        unlock();
-      } else {
-        throw new Error('API error ' + res.status);
-      }
-    } catch(ex) {
-      // Network error or CORS — still unlock (graceful degradation)
-      console.warn('Beehiiv subscribe error:', ex);
-      localStorage.setItem(LS_KEY, '1');
-      unlock();
+    const email = emailEl.value.trim();
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errorEl.style.display = 'block';
+      emailEl.style.borderColor = 'var(--red)';
+      return;
     }
+    errorEl.style.display = 'none';
+    emailEl.style.borderColor = '';
+    btn.disabled = true;
+    btnText.textContent = 'Subscribing...';
+    spinner.style.display = 'block';
+    try {
+      await fetch(`https://api.beehiiv.com/v2/publications/${PUB_ID}/subscriptions`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${API_KEY}` },
+        body: JSON.stringify({ email, reactivate_existing: false, send_welcome_email: true })
+      });
+    } catch (_) {}
+    btnText.textContent = '✓ You\'re in!';
+    spinner.style.display = 'none';
+    setTimeout(unlock, 600);
   });
 
-  // ─── Floating CTA ──────────────────────────────────────────
-  const floatBtn = document.getElementById('float-cta');
-  window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-    if (scrolled > 0.45) floatBtn.classList.add('visible');
-    else floatBtn.classList.remove('visible');
+  emailEl.addEventListener('input', function() {
+    errorEl.style.display = 'none';
+    emailEl.style.borderColor = '';
   });
+
+  function initFloatingCta() {
+    const cta = document.getElementById('floatingCta');
+    if (!cta) return;
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          cta.classList.toggle('visible', window.scrollY > window.innerHeight * 0.5);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
+})();
 </script>
 </body>
 </html>
